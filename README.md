@@ -106,7 +106,6 @@
 ### Association
 - belongs_to :user
 
-## 投稿画像
 ## shop_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
