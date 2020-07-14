@@ -90,7 +90,7 @@
 ### Association
 - has_many :shops
 - has_many :study_tips
-- has_many :chats
+- has_many :messages
 
 ## shopsテーブル
 |Column|Type|Options|
@@ -103,8 +103,10 @@
 |address|string||
 |access|string||
 |url|string||
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+- has_many :shop_images
 
 ## shop_imagesテーブル
 |Column|Type|Options|
@@ -119,16 +121,16 @@
 |------|----|-------|
 |title|string|null: false|
 |detail|text|null: false|
-|user_id|integer|foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
-## chatsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|detail|text|null: false|
+|text|text|null: false|
 |image|string||
-|user_id|integer|foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
