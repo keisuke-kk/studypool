@@ -32,12 +32,12 @@
    - ログイン機能
    - ログアウト機能
    - フラッシュメッセージ機能
-   - shops,study-tips,chatへの権限
+   - shops,study-tips,messagesへの権限
 - users
    - ログイン機能
    - ログアウト機能
    - フラッシュメッセージ機能
-   - chatへの権限
+   - messagesへの権限
 - shops
    - 新規作成機能
    - 編集機能
@@ -83,8 +83,6 @@
 |name|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
-|image|string|null: false|
-|status_message|string||
 |activated|boolean|null: false, defalt: false|
 |admin|boolean|null: false, defalt: false|
 ### Association
@@ -121,6 +119,7 @@
 |------|----|-------|
 |title|string|null: false|
 |detail|text|null: false|
+|image|string||
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
