@@ -77,18 +77,6 @@
 
 # DB設計
 
-## adminsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-|email|string|null: false|
-|password|string|null: false|
-|image|string|null: false|
-|status_message|string||
-### Association
-- has_many :comprehensive
-- has_many :opinions
-
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -97,100 +85,53 @@
 |password|string|null: false|
 |image|string|null: false|
 |status_message|string||
+|activated|boolean|null: false, defalt: false|
+|admin|boolean|null: false, defalt: false|
 ### Association
-- has_many :comprehensive
-- has_many :opinions
+- has_many :shops
+- has_many :study_tips
+- has_many :chats
 
-## constractorsテーブル
+## shopsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|email|string|null: false|
-|password|string|null: false|
-|industry|string|null: false|
-|aicon_image|string|null: false|
-|tel|string|null: false|
-|address|string|null: false|
+|detail|text|null: false|
+|aicon_image|string||
+|tel|string||
+|email|string||
+|address|string||
 |access|string||
-|hp|string||
-|account|string||
-|remarks|text||
+|url|string||
 ### Association
-- has_many :comprehensive
-- has_many :opinions
-- has_many :performances
-- has_many :constractor_images
+- belongs_to :user
 
 ## 投稿画像
-## constractor_imagesテーブル
+## shop_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|constractor_id|integer|null: false, foreign_key: true|
+|shop_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :constractor
+- belongs_to :shop
 
-## comprehensiveテーブル
+## study_tipsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
 |detail|text|null: false|
 |user_id|integer|foreign_key: true|
-|constractor_id|integer|foreign_key: true|
-|area_id|integer|null: false, foreign_key: true|
-|type_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :constructor
-- belongs_to :area
-- belongs_to :type
-- has_many :comprehensive_images
 
-## 投稿画像
-## comprehensive_imagesテーブル
+## chatsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
-|comprehensive_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :comprehensive
-
-## areasテーブル
-|Column|Type|Options|
-|------|----|-------|
-|title|string|null: false|
-### Association
-- has_many :types
-- has_many :comprehensive
-
-## typesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|title|string|null: false|
-### Association
-- belongs_to :area
-- has_many :comprehensive
-
-
-## performancesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|title|string|null: false|
-|detail|text|null: false|
-|image|string|null: false|
-|constructor_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :constructor
-
-## opinionsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|title|string|null: false|
 |detail|text|null: false|
 |image|string||
 |user_id|integer|foreign_key: true|
-|constractor_id|integer|foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :constructor
+
+
 
