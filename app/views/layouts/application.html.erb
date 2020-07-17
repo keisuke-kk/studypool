@@ -5,11 +5,30 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <header class="header">
+      <h1 class="header__logo">
+        <a href="/" class="header__logo--a">StudyPool</a>
+      </h1>
+      <nav class="header__wrap">
+        <ul class="header__wrap__nav">
+          <li class="header__wrap__nav__li">
+            <a href="#" class="header__wrap__nav__li--a">shop</a>
+          </li>
+          <li class="header__wrap__nav__li">
+            <a href="#" class="header__wrap__nav__li--a">study_tips</a>
+          </li>
+          <li class="header__wrap__nav__li">
+            <a href="#" class="header__wrap__nav__li--a">message</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    
     <%= yield %>
   </body>
 </html>
