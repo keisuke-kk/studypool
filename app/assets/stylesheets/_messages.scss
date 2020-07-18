@@ -1,4 +1,4 @@
-.photo3 {
+.photo4 {
 
   &__image {
     position: relative;
@@ -29,16 +29,18 @@
   }
 }
 
-.content2 {
+.content4 {
   margin: 100px;
+  position: relative;
 
-  &__title {
-    font-size: 2em;
+  &__user {
+    position: absolute;
+    right: 0;
   }
 
-  &__detail {
-    margin-top: 50px;
-    margin-left: 50px;
+  &__text {
+    position: absolute;
+    top: 50px;
+    left: 0;
   }
 }
-
