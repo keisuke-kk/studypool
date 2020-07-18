@@ -1,0 +1,44 @@
+.photo3 {
+
+  &__image {
+    position: relative;
+
+    &__el {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    &__ms {
+      position: absolute;
+      color: white;
+      top: 0;
+      left: 0;
+      font-size: 2em;
+      font-family: Quicksand, sans-serif;
+    }
+
+    &__msn {
+      position: absolute;
+      color: white;
+      top: 40px;
+      left: 0;
+      font-size: 2em;
+      font-family: Quicksand, sans-serif;
+    }
+  }
+}
+
+.content2 {
+  margin: 100px;
+
+  &__title {
+    font-size: 2em;
+  }
+
+  &__detail {
+    margin-top: 50px;
+    margin-left: 50px;
+  }
+}
+
