@@ -34,6 +34,7 @@
 
   &__c {
     display: flex;
+    margin-top: 20px;
 
     &__detail {
       margin-left: 50px;
@@ -60,14 +61,32 @@
   
     &__name {
       margin-bottom: 150px;
+      margin-left: 100px;
     }
   
     &__image {
       margin-bottom: 150px;
+      margin-left: 100px;
     }
   
     &__detail {
       margin-bottom: 150px;
+      margin-left: 100px;
+    }
+  
+    &__tel {
+      margin-bottom: 150px;
+      margin-left: 100px;
+    }
+  
+    &__address {
+      margin-bottom: 150px;
+      margin-left: 100px;
+    }
+  
+    &__url {
+      margin-bottom: 150px;
+      margin-left: 100px;
     }
 
     &__submit {
