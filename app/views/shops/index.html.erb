@@ -6,17 +6,19 @@
       <p class="photo2__image__msn">Woody Allen</p>
     </div>
   </div>
-  <div class="content">
-    <div class="content__c">
-      <div class="content__c__name">
-        <p class="content__c__name__title">Turry's 小倉貴船店</p>
-        <%= image_tag "turrys.jpeg", class: "content__c__name__image" %>
-      </div>
-      <div class="content__c__detail">
-        非常に落ち着いた空間です。<br>
-        隣の本屋と連結しており、カフェを利用すれば本を１冊くつろぎながら読むことができます。<br>
-        wi-fi環境もばっちりです。<br>
+  <% @shops.each do |shop| %>
+    <div class="content">
+        <div class="content__name">
+          <p class="content__name__title">
+            <%= shop.name %>
+          </p>
+        </div>
+      <div class="content__c">
+        <%= image_tag shop.aicon_image, class: "content__c__image" %>
+        <div class="content__c__detail">
+          <%= shop.detail %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
