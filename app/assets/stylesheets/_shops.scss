@@ -74,5 +74,47 @@
       text-align: center;
     }
   }
+}
 
+.shop-about {
+
+  .content {
+    
+    &__name {
+      font-size: large;
+      margin-top: 70px
+    }
+
+    &__detail {
+      margin-top: 30px;
+      margin-left: 40px;
+    }
+
+    &__tel {
+      margin-top: 50px;
+      display: flex;
+
+      &__c {
+        margin-left: 94px;
+      }
+    }
+
+    &__address {
+      margin-top: 20px;
+      display: flex;
+
+      &__c {
+        margin-left: 50px;
+      }
+    }
+
+    &__url {
+      margin-top: 20px;
+      display: flex;
+
+      &__c {
+        margin-left: 83px;
+      }
+    }
+  }
 }
