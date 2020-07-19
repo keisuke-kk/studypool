@@ -97,9 +97,7 @@
 |detail|text|null: false|
 |aicon_image|string||
 |tel|string||
-|email|string||
 |address|string||
-|access|string||
 |url|string||
 |user_id|integer|null: false, foreign_key: true|
 ### Association
