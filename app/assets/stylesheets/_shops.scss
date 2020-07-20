@@ -1,43 +1,63 @@
-.photo2 {
-
-  &__image {
-    position: relative;
-
-    &__el {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-    }
-
-    &__ms {
-      position: absolute;
-      color: white;
-      top: 0;
-      left: 0;
-      font-size: 2em;
-      font-family: Quicksand, sans-serif;
-    }
-
-    &__msn {
-      position: absolute;
-      color: white;
-      top: 60px;
-      right: 0;
-      font-size: 2em;
-      font-family: Quicksand, sans-serif;
+.shops-index {
+  
+  .photo2 {
+  
+    &__image {
+      position: relative;
+  
+      &__el {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+  
+      &__ms {
+        position: absolute;
+        color: white;
+        top: 0;
+        left: 0;
+        font-size: 2em;
+        font-family: Quicksand, sans-serif;
+      }
+  
+      &__msn {
+        position: absolute;
+        color: white;
+        top: 60px;
+        right: 0;
+        font-size: 2em;
+        font-family: Quicksand, sans-serif;
+      }
     }
   }
-}
+  
+  .content {
+    margin: 100px;
+  
+    &__c {
+      display: flex;
+      margin-top: 20px;
+  
+      &__detail {
+        margin-left: 50px;
+      }
+    }
 
-.content {
-  margin: 100px;
+    &__more {
 
-  &__c {
-    display: flex;
-    margin-top: 20px;
+      &__ul {
+        display: flex;
+        justify-content: space-between;
+        width: 20%;
 
-    &__detail {
-      margin-left: 50px;
+        &__li {
+
+          &__el {
+            text-decoration: none;
+            color: black;
+          }
+        }
+      }
     }
   }
 }
