@@ -1,10 +1,18 @@
 import Vue from 'vue';
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function() {
   new Vue({
-    el: '#app',
+    el: '#more',
     data: {
-      name: 'aaa'
+      hoverFlag: false,
+    },
+    methods: {
+      mouseOverAction() {
+        this.hoverFlag = true
+      },
+      mouseLemoveAction() {
+        this.hoverFlag = false
+      }
     }
   });
 });

@@ -13,6 +13,12 @@ class ShopsController < ApplicationController
     redirect_to shops_path
   end
 
+  def destroy
+    shop = Shop.find(params[:id])
+    shop.destroy
+    redirect_to shops_path
+  end
+
   private
 
     def shop_params
