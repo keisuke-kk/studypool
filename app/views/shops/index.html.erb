@@ -7,6 +7,14 @@
     </div>
   </div>
   <% @shops.each do |shop| %>
+    <div class="more">
+      <span><%= image_tag 'arrow_top.png' %></span>
+      <ul class="more-list">
+        <li>
+          <%= link_to '削除', "/shops/#{shop.id}", method: :delete %>
+        </li>
+      </ul>
+    </div>
     <div class="content">
         <div class="content__name">
           <p class="content__name__title">
