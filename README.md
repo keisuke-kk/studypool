@@ -80,9 +80,9 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
-|email|string|null: false|
-|password|string|null: false|
+|name|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+|password|string|null: false, unique: true|
 |activated|boolean|null: false, defalt: false|
 |admin|boolean|null: false, defalt: false|
 ### Association
@@ -95,7 +95,7 @@
 |------|----|-------|
 |name|string|null: false|
 |detail|text|null: false|
-|aicon_image|string||
+|aicon_image|text||
 |tel|string||
 |address|string||
 |url|string||
