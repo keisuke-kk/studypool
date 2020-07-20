@@ -1,4 +1,4 @@
-<div>
+<div class="shops-index">
   <div class="photo2">
     <div class="photo2__image">
       <%= image_tag "cafe2.webp", class: "photo2__image__el" %>
@@ -7,25 +7,27 @@
     </div>
   </div>
   <% @shops.each do |shop| %>
-    <div class="more">
-      <span><%= image_tag 'arrow_top.png' %></span>
-      <ul class="more-list">
-        <li>
-          <%= link_to '削除', "/shops/#{shop.id}", method: :delete %>
-        </li>
-      </ul>
-    </div>
     <div class="content">
-        <div class="content__name">
-          <p class="content__name__title">
-            <%= shop.name %>
-          </p>
-        </div>
+      <div class="content__name">
+        <p class="content__name__title">
+          <%= shop.name %>
+        </p>
+      </div>
       <div class="content__c">
         <%= image_tag shop.aicon_image, class: "content__c__image" %>
         <div class="content__c__detail">
           <%= shop.detail %>
         </div>
+      </div>
+      <div class="content__more">
+        <ul class="content__more__ul">
+          <li class="content__more__ul__li">
+            <%= link_to 'edit', "/shops/#{shop.id}/edit", method: :get, class: "content__more__ul__li__el" %>
+          </li>
+          <li class="content__more__ul__li">
+            <%= link_to 'delete', "/shops/#{shop.id}", method: :delete, class: "content__more__ul__li__el" %>
+          </li>
+        </ul>
       </div>
     </div>
   <% end %>
