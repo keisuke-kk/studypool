@@ -31,16 +31,34 @@
 
 .content4 {
   margin: 100px;
-  position: relative;
 
   &__user {
-    position: absolute;
-    right: 0;
+    text-align: right;
   }
 
-  &__text {
-    position: absolute;
-    top: 50px;
-    left: 0;
+  &__c {
+    height: 800px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+
+    &__el {
+      margin: 50px;
+
+      &__time {
+        color: darkgrey;
+        font-size: smaller;
+        text-align: right;
+      }
+    }
+  }
+
+  &__submit {
+    margin-top: 50px;
+    text-align: center;
+    
+    &__form {
+      max-width: 800px;
+    }
   }
 }
