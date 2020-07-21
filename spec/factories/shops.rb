@@ -3,7 +3,7 @@ FactoryBot.define do
   factory :shop do
     name          {"keisuke"}
     detail        {"aaaaaaaaaaaa"}
-    aicon_image   {"turrys.jpeg"}
+    attached      { fixture_file_upload(Rails.root.join('spec', 'fixtures', 'station.webp'), 'images') }
     tel           {"00000000000"}
     address       {"aaaaaaaaaaaa"}
     url           {"aaaaaaaaaaaa"}

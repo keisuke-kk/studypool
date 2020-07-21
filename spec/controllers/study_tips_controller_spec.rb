@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Study_tipsController do
+describe StudyTipsController do
   describe 'GET #new' do
     it "new.html.erbに遷移すること" do
       get :new

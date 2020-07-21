@@ -6,6 +6,21 @@
     </div>
     <div class="content4">
       <p class="content4__user">user   logout</p>
-      <p class="content4__text">朝は自己コントロール感も高い</p>
+      <div class="content4__c">
+        <% @messages.each do |message| %>
+          <div class="content4__c__el">
+            <%= message.text %>
+            <div class="content4__c__el__time">
+              <%= message.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="content4__submit">
+        <%= form_with(model: @message, local: true) do |f| %>
+          <%= f.text_field :text, placeholder: "Message", size: "80", class: "content4__submit__form"%>
+          <%= f.submit "SEND", class: "content4__submit__btn" %>
+        <% end %>
+      </div>
     </div>
   </div>
