@@ -19,6 +19,16 @@ class StudyTipsController < ApplicationController
     redirect_to study_tips_path
   end
 
+  def edit
+    @study_tip = StudyTip.find(params[:id])
+  end
+
+  def update
+    study_tip = StudyTip.find(params[:id])
+    study_tip.update(study_tip_params)
+    redirect_to study_tips_path
+  end
+
   private
 
     def study_tip_params
