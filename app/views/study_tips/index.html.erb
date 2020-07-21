@@ -7,13 +7,28 @@
     </div>
   </div>
   <div class="content2">
-    <h2 class="content2__title">朝の効率性</h2>
-    <div class="content2__detail">
-       お昼ご飯の時間帯を16:30~17:00で取るべきです。<br>
-       思考が最も研ぎ澄まされるのは朝です。<br>
-       しかし、通常の生活ではたいてい朝の時間は3時間程度です。<br>
-       であるならば、お昼ご飯を食べる前の朝の状態を可能な限り引き延ばすことは<br>
-       合理的な判断と言えます。<br>
-    </div>
+    <% @study_tips.each do |study_tip| %>
+      <h2 class="content2__title">
+        <%= study_tip.title %>
+      </h2>
+      <div class="content2__c">
+        <div>
+          <%= image_tag study_tip.image, class: "content2__c__image" %>
+        </div>
+        <div class="content2__c__detail">
+          <%= simple_format(study_tip.detail) %>
+        </div>
+      </div>
+      <div class="content2__more">
+        <ul class="content2__more__ul">
+          <li class="content2__more__ul__li">
+            <%= link_to 'edit', "/study_tips/#{study_tip.id}/edit", method: :get, class: "content2__more__ul__li__el" %>
+          </li>
+          <li class="content2__more__ul__li">
+            <%= link_to 'delete', "/study_tips/#{study_tip.id}", method: :delete, class: "content2__more__ul__li__el" %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
   </div>
 </div>

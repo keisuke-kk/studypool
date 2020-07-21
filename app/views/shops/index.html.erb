@@ -16,7 +16,7 @@
       <div class="content__c">
         <%= image_tag shop.aicon_image, class: "content__c__image" %>
         <div class="content__c__detail">
-          <%= shop.detail %>
+          <%= simple_format(shop.detail) %>
         </div>
       </div>
       <div class="content__more">

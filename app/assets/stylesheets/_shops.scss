@@ -37,6 +37,12 @@
     &__c {
       display: flex;
       margin-top: 20px;
+
+      &__image {
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
+      }
   
       &__detail {
         margin-left: 50px;
@@ -47,14 +53,13 @@
 
       &__ul {
         display: flex;
-        justify-content: space-between;
-        width: 20%;
 
         &__li {
 
           &__el {
             text-decoration: none;
             color: black;
+            margin-right: 40px;
           }
         }
       }
@@ -111,6 +116,7 @@
 
     &__submit {
       text-align: center;
+      height: 150px;
     }
   }
 }
