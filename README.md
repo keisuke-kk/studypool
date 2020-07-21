@@ -95,7 +95,7 @@
 |------|----|-------|
 |name|string|null: false|
 |detail|text|null: false|
-|aicon_image|text||
+|aicon_image|text|limit: 4294967295|
 |tel|string||
 |address|string||
 |url|string||
@@ -107,7 +107,7 @@
 ## shop_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null: false|
+|image|text|null: false, limit: 4294967295|
 |shop_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :shop
@@ -117,7 +117,7 @@
 |------|----|-------|
 |title|string|null: false|
 |detail|text|null: false|
-|image|text||
+|image|text|limit: 4294967295|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
