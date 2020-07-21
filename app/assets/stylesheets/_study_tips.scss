@@ -30,15 +30,44 @@
 }
 
 .content2 {
-  margin: 100px;
+  margin: 100px 150px;
 
   &__title {
     font-size: 2em;
+    margin-top: 100px;
   }
 
-  &__detail {
+  &__c {
     margin-top: 50px;
     margin-left: 50px;
+  
+    &__detail {
+      
+    }
+  
+    &__image {
+      height: 200px;
+      width: 300px;
+      object-fit: cover;
+    }
+  }
+
+  &__more {
+    margin-top: 20px;
+    margin-left: 50px;
+
+    &__ul {
+      display: flex;
+
+      &__li {
+
+        &__el {
+          text-decoration: none;
+          color: black;
+          margin-right: 40px;
+        }
+      }
+    }
   }
 }
 
@@ -62,14 +91,22 @@
   
     &__name {
       margin-bottom: 150px;
+      margin-left: 100px;
     }
   
     &__detail {
       margin-bottom: 150px;
+      margin-left: 100px;
+    }
+
+    &__image {
+      margin-bottom: 150px;
+      margin-left: 100px;
     }
 
     &__submit {
       text-align: center;
+      height: 150px;
     }
   }
 
