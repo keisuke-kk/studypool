@@ -126,7 +126,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
-|image|string||
+|image|text|limit: 4294967295|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
