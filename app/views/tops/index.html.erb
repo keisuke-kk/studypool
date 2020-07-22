@@ -16,26 +16,27 @@
     <br>
     <p class="introduction__p">当サイトは</p>
     <p class="introduction__p">自己を高めるに不可欠な"study"に</p>
-    <p class="introduction__p">効果的な情報を"pool"することが目的です。</p>
+    <p class="introduction__p">効果的な情報を"pool"することを目的とした</p>
+    <p class="introduction__p">アプリケーションです。</p>
   </div>
   <div class="photo2">
     <div class="photo2__image">
       <%= image_tag "cafe2.webp", class: "photo2__image__el" %>
-      <a href="#" class="photo2__image__ms">Shops</a>
+      <%= link_to "Shops", shops_path, class: "photo2__image__ms" %>
       <p class="photo2__image__msn">勉強に最適なカフェ等を紹介します</p>
     </div>
   </div>
   <div class="photo2">
     <div class="photo2__image">
       <%= image_tag "cafe3.webp", class: "photo2__image__el" %>
-      <a href="#" class="photo2__image__ms">Study_tips</a>
+      <%= link_to "StudyTips", study_tips_path, class: "photo2__image__ms" %>
       <p class="photo2__image__msn">効率的な学習方法や取り組み方を紹介します</p>
     </div>
   </div>
   <div class="photo2">
     <div class="photo2__image">
       <%= image_tag "cafe4.webp", class: "photo2__image__el" %>
-      <p class="photo2__image__ms">Messages</p>
+      <%= link_to "Messages", messages_path, class: "photo2__image__ms" %>
       <p class="photo2__image__msn">もっと良い勉強法などをご紹介いただけると幸いです</p>
     </div>
   </div>

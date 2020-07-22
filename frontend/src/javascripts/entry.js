@@ -2,10 +2,7 @@ import Vue from 'vue';
 
 document.addEventListener("DOMContentLoaded", function() {
   new Vue({
-    el: '#more',
-    data: {
-      hoverFlag: false,
-    },
+    el: '#array',
     methods: {
       mouseOverAction() {
         this.hoverFlag = true

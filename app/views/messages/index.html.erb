@@ -5,7 +5,21 @@
       <p class="photo4__image__msn">Henry Ford</p>
     </div>
     <div class="content4">
-      <p class="content4__user">user   logout</p>
+      <% if user_signed_in? %>
+        <ul class="content4__user">
+          <li>
+            <%= link_to "#{current_user.name}", "/users/#{current_user.id}", class: "content4__user__el" %>
+            <%= link_to "sign-out", destroy_user_session_path, method: :delete, class: "content4__user__el" %>
+          </li>
+        </ul>
+      <% else %>
+        <ul class="content4__user">
+          <li>
+            <%= link_to "sign-in", new_user_session_path, class: "content4__user__el" %>
+            <%= link_to "sign-up", new_user_registration_path, class: "content4__user__el" %>
+          </li>
+        </ul>
+      <% end %>
       <div class="content4__c">
         <% @messages.each do |message| %>
           <div class="content4__c__el">
@@ -13,16 +27,20 @@
             <div class="content4__c__el__time">
               <%= message.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
             </div>
-            <div class="content4__c__el__delete">
-              <%= link_to 'delete', "/messages/#{message.id}", method: :delete, class: "content4__c__el__delete__d" %>
-            </div>
+            <% if admin_signed_in?  %>
+              <div class="content4__c__el__delete">
+                <%= link_to 'delete', "/messages/#{message.id}", method: :delete, class: "content4__c__el__delete__d" %>
+              </div>
+            <% end %>
           </div>
         <% end %>
       </div>
       <div class="content4__submit">
-        <%= form_with(model: @message, local: true) do |f| %>
-          <%= f.text_field :text, placeholder: "Message", size: "60", class: "content4__submit__form"%>
-          <%= f.submit "SEND", class: "content4__submit__btn" %>
+        <% if user_signed_in? || admin_signed_in?  %>
+          <%= form_with(model: @message, local: true) do |f| %>
+            <%= f.text_field :text, placeholder: "Message", size: "60", class: "content4__submit__form"%>
+            <%= f.submit "SEND", class: "content4__submit__btn" %>
+          <% end %>
         <% end %>
       </div>
     </div>
