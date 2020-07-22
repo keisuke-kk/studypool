@@ -79,8 +79,8 @@
 ## adminsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true|
-|password|string|null: false|
+|name|string|null: false, unique: true, default: ""|
+|password|string|null: false, default: ""|
 ### Association
 - has_many :shops
 - has_many :study_tips
@@ -89,9 +89,9 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true|
-|email|string|null: false, unique: true|
-|password|string|null: false|
+|name|string|null: false, unique: true, default: ""|
+|email|string|null: false, unique: true, default: ""|
+|password|string|null: false, default: ""|
 ### Association
 - has_many :messages
 
