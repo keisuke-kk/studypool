@@ -19,16 +19,18 @@
           <%= simple_format(study_tip.detail) %>
         </div>
       </div>
-      <div class="content2__more">
-        <ul class="content2__more__ul">
-          <li class="content2__more__ul__li">
-            <%= link_to 'edit', "/study_tips/#{study_tip.id}/edit", method: :get, class: "content2__more__ul__li__el" %>
-          </li>
-          <li class="content2__more__ul__li">
-            <%= link_to 'delete', "/study_tips/#{study_tip.id}", method: :delete, class: "content2__more__ul__li__el" %>
-          </li>
-        </ul>
-      </div>
+      <% if admin_signed_in? %>
+        <div class="content2__more">
+          <ul class="content2__more__ul">
+            <li class="content2__more__ul__li">
+              <%= link_to 'edit', "/study_tips/#{study_tip.id}/edit", method: :get, class: "content2__more__ul__li__el" %>
+            </li>
+            <li class="content2__more__ul__li">
+              <%= link_to 'delete', "/study_tips/#{study_tip.id}", method: :delete, class: "content2__more__ul__li__el" %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

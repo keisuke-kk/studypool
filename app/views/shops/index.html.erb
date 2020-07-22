@@ -19,16 +19,18 @@
           <%= simple_format(shop.detail) %>
         </div>
       </div>
-      <div class="content__more">
-        <ul class="content__more__ul">
-          <li class="content__more__ul__li">
-            <%= link_to 'edit', "/shops/#{shop.id}/edit", method: :get, class: "content__more__ul__li__el" %>
-          </li>
-          <li class="content__more__ul__li">
-            <%= link_to 'delete', "/shops/#{shop.id}", method: :delete, class: "content__more__ul__li__el" %>
-          </li>
-        </ul>
-      </div>
+      <% if admin_signed_in? %>
+        <div class="content__more">
+          <ul class="content__more__ul">
+            <li class="content__more__ul__li">
+              <%= link_to 'edit', "/shops/#{shop.id}/edit", method: :get, class: "content__more__ul__li__el" %>
+            </li>
+            <li class="content__more__ul__li">
+              <%= link_to 'delete', "/shops/#{shop.id}", method: :delete, class: "content__more__ul__li__el" %>
+            </li>
+          </ul>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>

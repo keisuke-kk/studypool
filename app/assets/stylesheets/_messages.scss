@@ -34,6 +34,12 @@
 
   &__user {
     text-align: right;
+
+    &__el {
+      margin-left: 10px;
+      text-decoration: none;
+      color: black;
+    }
   }
 
   &__c {
