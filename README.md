@@ -49,12 +49,11 @@
    - 新規作成機能
    - 編集機能
    - 削除機能
-- messages
-   - 新規作成機能
-   - 編集機能
-   - 削除機能
    - 検索機能
    - ページネーション機能
+- messages
+   - 新規作成機能
+   - 削除機能
 
 # 使用技術(開発環境)
 - AWS
@@ -77,18 +76,25 @@
 
 # DB設計
 
+## adminsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|password|string|null: false|
+### Association
+- has_many :shops
+- has_many :study_tips
+- has_many :messages
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
 |email|string|null: false, unique: true|
-|password|string|null: false, unique: true|
-|activated|boolean|null: false, defalt: false|
-|admin|boolean|null: false, defalt: false|
+|password|string|null: false|
 ### Association
-- has_many :shops
-- has_many :study_tips
 - has_many :messages
+
 
 ## shopsテーブル
 |Column|Type|Options|
@@ -101,7 +107,7 @@
 |url|string||
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
+- belongs_to :admin
 - has_many :shop_images
 
 ## shop_imagesテーブル
@@ -120,7 +126,7 @@
 |image|text|limit: 4294967295|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :user
+- belongs_to :admin
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -129,6 +135,7 @@
 |image|text|limit: 4294967295|
 |user_id|integer|null: false, foreign_key: true|
 ### Association
+- belongs_to :admin
 - belongs_to :user
 
 
