@@ -15,7 +15,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
-  socket: /tmp/mysql.sock
+  # socket: /tmp/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
 
 development:
   <<: *default
@@ -54,4 +55,5 @@ production:
   database: studypool_production
   username: root
   password: 
+  # socket: /tmp/mysql.sock
   socket: /var/lib/mysql/mysql.sock

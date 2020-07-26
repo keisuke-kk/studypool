@@ -11,8 +11,9 @@ set :branch, 'master'
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/var/www/rails/studypool"
 
-set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
-set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+set :linked_files, fetch(:linked_files, []).push('config/master.key')
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'var/lib/mysql/sockets', 'vendor/bundle', 'public/system')
+# set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
 set :keep_releases, 5
 set :rbenv_ruby, '2.5.1'
 set :log_level, :debug
